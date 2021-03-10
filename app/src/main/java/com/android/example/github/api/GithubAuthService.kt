@@ -26,5 +26,5 @@ import retrofit2.http.POST
 interface GithubAuthService {
     @POST("login/oauth/access_token")
     @Headers("Accept: application/json")
-    suspend fun createAccessToken(@Body parameter: AccessTokenParameter): AccessTokenResponse
+    suspend fun createAccessToken(@Body parameter: com.android.example.data.api.AccessTokenParameter): AccessTokenResponse
 }
