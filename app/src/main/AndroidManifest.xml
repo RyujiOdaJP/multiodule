@@ -53,6 +53,4 @@
         <activity android:name=".testing.SingleFragmentActivity" />
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
 </manifest>
