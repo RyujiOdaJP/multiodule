@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.android.example.github.api
-
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
+package com.android.example.model
 
 /**
- * REST API access points
+ * Status of a resource that is provided to the UI.
+ *
+ *
+ * These are usually created by the Repository classes where they return
+ * `LiveData<Resource<T>>` to pass back the latest data to the UI with its fetch status.
  */
-interface GithubAuthService {
-    @POST("login/oauth/access_token")
-    @Headers("Accept: application/json")
-    suspend fun createAccessToken(@Body parameter: com.android.example.data.api.AccessTokenParameter): AccessTokenResponse
+enum class Status {
+    SUCCESS,
+    ERROR,
+    LOADING
 }

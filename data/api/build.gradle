@@ -35,8 +35,13 @@ android {
 }
 
 dependencies {
+    /*
+    * なぜ、api/build.gradleではmodelへの依存をapiで記述しているのか？
+    * api moduleとして公開するのはGithubServiceとなりますが、このGithubServiceのメソッドの戻りには、
+    * model moduleに含まれているクラスを返すことになるからです。
+    * */
+    api project(":model") // add
 
-    implementation project(":data:api") // add
     implementation deps.lifecycle.livedata_ktx
     api deps.retrofit.runtime
     implementation deps.retrofit.gson

@@ -14,23 +14,17 @@
  * limitations under the License.
  */
 
-package com.android.example.github.vo
+package com.android.example.data.api
 
-import androidx.room.Entity
-import com.google.gson.annotations.SerializedName
+import retrofit2.http.Body
+import retrofit2.http.Headers
+import retrofit2.http.POST
 
-@Entity(primaryKeys = ["login"])
-data class User(
-    @field:SerializedName("login")
-    val login: String,
-    @field:SerializedName("avatar_url")
-    val avatarUrl: String?,
-    @field:SerializedName("name")
-    val name: String?,
-    @field:SerializedName("company")
-    val company: String?,
-    @field:SerializedName("repos_url")
-    val reposUrl: String?,
-    @field:SerializedName("blog")
-    val blog: String?
-)
+/**
+ * REST API access points
+ */
+interface GithubAuthService {
+    @POST("login/oauth/access_token")
+    @Headers("Accept: application/json")
+    suspend fun createAccessToken(@Body parameter: AccessTokenParameter): AccessTokenResponse
+}
