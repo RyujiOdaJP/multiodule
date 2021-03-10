@@ -10,7 +10,7 @@ in this repository first.
 Introduction
 -------------
 
-### Functionality
+### Functionalit
 The app is composed of 3 main screens.
 #### SearchFragment
 Allows you to search repositories on Github.
